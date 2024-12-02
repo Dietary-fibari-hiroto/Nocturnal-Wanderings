@@ -1,0 +1,44 @@
+﻿<Page x:Class="WpfApp1.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" d:DesignWidth="1920"
+      Title="Page1">
+
+    <Grid>
+        <Grid Margin="0,0,0,50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Column ="0" Width="500" Height="100" Fill="#122332"/>
+            <Rectangle Grid.Column ="1" Width="500" Height="100" Fill="#122332" Margin="0,0,0,150"/>
+        </Grid>
+        <StackPanel Orientation="Vertical"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Panel.ZIndex="1">
+            <Viewbox MaxWidth="1000">
+                <TextBlock Text="Hello, .NET Framework(WPF)"
+               
+               Foreground="#ffffff"/>
+            </Viewbox>
+            <Button Content="Go Test"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Foreground="#ffffff"
+            Background="#122332"
+            FontSize="80"
+            Width="500"
+            Height="100"
+            Margin="0,50,0,0"
+            Click="Button_Click"
+            />
+
+        </StackPanel>
+    </Grid>
+</Page>

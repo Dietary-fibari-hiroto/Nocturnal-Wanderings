@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp1.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Main" Height="1000" Width="1920">
+    <Window.Background>
+        <ImageBrush ImageSource="pack://application:,,,/Resources/AdobeStock_613926707.jpeg"/>
+    </Window.Background>
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+>
+            <TextBlock
+                Text="Test boot"
+                FontSize="60"
+                Foreground="#ffffff"
+                Background="#122332"
+                HorizontalAlignment="Center"
+                Padding="100,10"
+                Margin="0,100"/>
+            <StackPanel Orientation="Horizontal" >
+                <Border Background="#DEE3D1" Width="200" Height="200" CornerRadius="100" Margin="50,0">
+                    <Image Source="pack://application:,,,/Resources/code_icon-icons.com_73620.png"
+                       Width="50" Height="50" />
+                </Border>
+                <Border Background="#DEE3D1" Width="200" Height="200" CornerRadius="100" Margin="50,0">
+                    <Image Source="pack://application:,,,/Resources/fileinterfacesymboloftextpapersheet_79740.png"
+                       Width="50" Height="50" />
+                </Border>
+                <Border Background="#DEE3D1" Width="200" Height="200" CornerRadius="100" Margin="50,0">
+                    <Image Source="pack://application:,,,/Resources/mbrisetting_99589.pngg"
+                       Width="50" Height="50" />
+                </Border>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
