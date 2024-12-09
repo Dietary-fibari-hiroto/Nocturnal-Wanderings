@@ -27,7 +27,7 @@
                         <Image Source="pack://application:,,,/Resources/code_icon-icons.com_73620.png"
                        Width="50" Height="50" />
                     </Border>
-                    <Border Background="#DEE3D1" Width="200" Height="200" CornerRadius="100" Margin="50,0">
+                    <Border Background="#DEE3D1" Width="200" Height="200" CornerRadius="100" Margin="50,0" MouseDown="Page">
                         <Image Source="pack://application:,,,/Resources/fileinterfacesymboloftextpapersheet_79740.png"
                        Width="50" Height="50" />
                     </Border>

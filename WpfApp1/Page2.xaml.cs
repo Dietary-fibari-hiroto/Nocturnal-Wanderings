@@ -43,5 +43,9 @@ namespace WpfApp1
         
 
         }
+        private void Page(object sender,MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new slidebarTest());
+        }
     }
 }
