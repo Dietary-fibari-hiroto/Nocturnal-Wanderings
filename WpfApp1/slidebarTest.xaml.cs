@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using WpfApp1.hooks;
 
 namespace WpfApp1
 {
@@ -21,15 +23,19 @@ namespace WpfApp1
     /// </summary>
     public partial class slidebarTest : Page
     {
+        private Boolean filterState = false;
         public slidebarTest()
         {
             InitializeComponent();
-        }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+            DataContext = new MainViewModel();
+        }
+        private void Filter(object sender,MouseButtonEventArgs e)
         {
-            double value = (double)e.NewValue;
-            TestValue.Text = value.ToString();
+            if (!filterState)
+            {
+                
+            }
         }
     }
 

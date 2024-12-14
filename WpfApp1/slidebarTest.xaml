@@ -7,13 +7,49 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="slidebarTest">
+    <Page.Resources>
+
+        <ControlTemplate x:Key="CustomThumb" TargetType="Thumb">
+            <Rectangle Width="30" Height="10" Fill="white"/>
+        </ControlTemplate>
+        <Style TargetType="Slider">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <!-- Track部分のカスタマイズ -->
+                            <Track Name="PART_Track" IsDirectionReversed="False">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="Slider.DecreaseSmall" />
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="Slider.IncreaseSmall" />
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Template="{StaticResource CustomThumb}" />
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid>
 
-        <Slider Minimum="0" Maximum="100" Value="50" TickFrequency="1" IsSnapToTickEnabled="True" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Height="300"
-                ValueChanged="Slider_ValueChanged"/>
-        <TextBlock Text="{x:Static local:StaticData.TestWord}"   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Foreground="#ffffff"/>
-        <TextBlock Text="{x:Static local:StaticData.TestWord2}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24" Foreground="#ffffff"/>
-        <TextBlock Name="TestValue" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Foreground="#ffffff"/>
+        <Slider   Minimum="0" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" 
+                 Height="250" Width="30" Value="{Binding SliderValue, Mode=TwoWay}" />
+
+        <TextBlock Text="{x:Static local:StaticData.TestWord}" 
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" 
+                   Foreground="#ffffff" MouseDown="Filter"/>
+        <TextBlock Text="{x:Static local:StaticData.TestWord2}" 
+                   HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="24" 
+                   Foreground="#ffffff"/>
+        <TextBlock Text="{Binding SliderValue}" 
+                   HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" 
+                   Foreground="#ffffff"/>
     </Grid>
 </Page>
